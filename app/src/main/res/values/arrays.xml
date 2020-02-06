@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="generating_animation_strings">
+        <item>@string/generating_start_animation_text1</item>
+        <item>@string/generating_start_animation_text2</item>
+        <item>@string/generating_start_animation_text3</item>
+        <item>@string/generating_start_animation_text4</item>
+    </string-array>
+</resources>
