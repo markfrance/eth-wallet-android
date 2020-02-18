@@ -43,10 +43,6 @@ import java.math.BigDecimal
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-/**
- * Created by BArtWell on 11.07.2018.
- */
-
 class WalletFragment : BaseViewModelFragment() {
 
     companion object {

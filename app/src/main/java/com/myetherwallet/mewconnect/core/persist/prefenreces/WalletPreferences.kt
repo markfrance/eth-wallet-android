@@ -9,9 +9,6 @@ import com.myetherwallet.mewconnect.core.utils.crypto.keystore.DeprecatedStorage
 import com.myetherwallet.mewconnect.core.utils.crypto.keystore.StorageKeystoreHelper
 import com.myetherwallet.mewconnect.feature.main.data.WalletData
 
-/**
- * Created by BArtWell on 04.09.2018.
- */
 
 private const val PREFIX = "wallet_"
 

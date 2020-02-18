@@ -40,6 +40,8 @@ interface ApplicationComponent {
 
     fun inject(fragment: SendFragment)
 
+    fun inject(fragment: ConfirmTransactionFragment)
+
     fun inject(fragment: ForgotPasswordFragment)
 
     fun inject(fragment: RestoreExistingWalletFragment)

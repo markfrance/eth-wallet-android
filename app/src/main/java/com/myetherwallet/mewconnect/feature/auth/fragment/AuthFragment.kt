@@ -29,6 +29,7 @@ import com.myetherwallet.mewconnect.feature.main.fragment.WalletFragment
 import kotlinx.android.synthetic.main.fragment_auth.*
 import org.web3j.crypto.ECKeyPair
 import org.web3j.crypto.Keys
+import java.security.Key
 import javax.inject.Inject
 
 /**
@@ -36,6 +37,7 @@ import javax.inject.Inject
  */
 
 private const val EXTRA_ALLOW_BIOMETRIC = "allow_biometric"
+
 
 class AuthFragment : BaseDiFragment() {
 
@@ -47,6 +49,8 @@ class AuthFragment : BaseDiFragment() {
             fragment.arguments = arguments
             return fragment
         }
+
+       lateinit var ks :KeyStore;
     }
 
     @Inject
@@ -54,6 +58,7 @@ class AuthFragment : BaseDiFragment() {
     private lateinit var attemptsHelper: AuthAttemptsHelper
     private val handler = Handler()
     private var isBiometricAllowed = false
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -143,6 +148,8 @@ class AuthFragment : BaseDiFragment() {
         auth_enter.setImageDrawable(drawable)
     }
 
+
+
     private fun doAuth() {
         addOnResumeListener {
             if (auth_password_input_layout.isEnabled) {
@@ -163,6 +170,7 @@ class AuthFragment : BaseDiFragment() {
                     target.onAuthResult(keystoreHelper, keyStore)
                 }
             }
+            ks = keyStore;
         } else {
             if (!attemptsHelper.check()) {
                 auth_password_input_layout.error = getString(R.string.auth_wrong_password_error)
